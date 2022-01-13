@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/numbersInputFragment">
+
+    <fragment android:id="@+id/numbersInputFragment"
+              android:name="pl.gieted.outstanding_number_finder.ui.main.NumbersInputFragment"
+              android:label="numers_input_fragment" tools:layout="@layout/numbers_input_fragment">
+        <action android:id="@+id/show_result" app:destination="@id/resultFragment"
+                app:enterAnim="@android:anim/slide_in_left" app:exitAnim="@android:anim/slide_out_right"
+                app:popEnterAnim="@android:anim/slide_in_left" app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment android:id="@+id/resultFragment" android:name="pl.gieted.outstanding_number_finder.ui.main.ResultFragment"
+              android:label="fragment_result" tools:layout="@layout/result_fragment">
+        <argument android:name="integers" app:argType="integer[]"/>
+    </fragment>
+</navigation>

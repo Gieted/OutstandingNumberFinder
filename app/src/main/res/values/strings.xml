@@ -2,4 +2,7 @@
     <string name="app_name">Outstanding Number Finder</string>
     <string name="numbers_input_hint">Wprowadź liczby</string>
     <string name="search">Wyszukaj</string>
+    <string name="input_cannot_be_blank">Proszę wprowadzić liczby</string>
+    <string name="less_than_3_numbers">Należy wprowadzić conajmniej trzy liczby</string>
+    <string name="incorrect_input">Wprowadzone dane są nieprawidłowe</string>
 </resources>

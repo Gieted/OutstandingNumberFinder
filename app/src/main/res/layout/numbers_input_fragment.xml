@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="pl.gieted.outstanding_number_finder.ui.main.NumbersInputViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.main.NumbersInputFragment">
+
+        <EditText
+                android:layout_width="248dp"
+                android:layout_height="54dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/numbersInput"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="68dp" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.496"
+                tools:autofillHints="none" android:importantForAutofill="no"
+                android:hint="@string/numbers_input_hint"
+                android:text="@={viewModel.input}"
+                app:error="@{viewModel.errorMessage}"
+        />
+        <Button
+                android:text="@string/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/searchButton"
+                app:layout_constraintTop_toBottomOf="@+id/numbersInput"
+                android:layout_marginTop="24dp" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
+                android:enabled="@{viewModel.errorMessage == null}"
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
