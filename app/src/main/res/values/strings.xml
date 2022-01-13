@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Outstanding Number Finder</string>
+    <string name="numbers_input_hint">Wprowadź liczby</string>
+    <string name="search">Wyszukaj</string>
 </resources>
