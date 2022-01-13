@@ -5,4 +5,5 @@
     <string name="input_cannot_be_blank">Proszę wprowadzić liczby</string>
     <string name="less_than_3_numbers">Należy wprowadzić conajmniej trzy liczby</string>
     <string name="incorrect_input">Wprowadzone dane są nieprawidłowe</string>
+    <string name="not_single_outstanding">Tylko jedna liczba może różnić się parzystością</string>
 </resources>

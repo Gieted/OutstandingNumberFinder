@@ -34,6 +34,7 @@ class NumbersInputViewModel(private val context: Fragment) : BaseObservable() {
                     IntegersParsingError.InputBlank -> context.getString(R.string.input_cannot_be_blank)
                     IntegersParsingError.IncorrectFormat -> context.getString(R.string.incorrect_input)
                     IntegersParsingError.LessThan3Numbers -> context.getString(R.string.less_than_3_numbers)
+                    IntegersParsingError.NotSingleOutstanding -> context.getString(R.string.not_single_outstanding)
                     else -> throw IllegalStateException()
                 }
             }
@@ -66,9 +67,12 @@ class NumbersInputFragment : Fragment() {
 
         binding.searchButton.setOnClickListener {
             viewModel.validationStarted = true
-            val integers = parseIntegersInput(viewModel.input).integers ?: emptyList()
-            val showResult = NumbersInputFragmentDirections.showResult(integers.toIntArray())
-            findNavController().navigate(showResult)
+            val parsingResult = parseIntegersInput(viewModel.input)
+            if (parsingResult.isValid) {
+                val integers = parsingResult.integers ?: emptyList()
+                val showResult = NumbersInputFragmentDirections.showResult(integers.toIntArray())
+                findNavController().navigate(showResult)
+            }
         }
     }
 }
