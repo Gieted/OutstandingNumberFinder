@@ -34,7 +34,7 @@ class NumbersInputViewModel(private val context: Fragment) : BaseObservable() {
                     IntegersParsingError.InputBlank -> context.getString(R.string.input_cannot_be_blank)
                     IntegersParsingError.IncorrectFormat -> context.getString(R.string.incorrect_input)
                     IntegersParsingError.LessThan3Numbers -> context.getString(R.string.less_than_3_numbers)
-                    IntegersParsingError.NotSingleOutstanding -> context.getString(R.string.not_single_outstanding)
+                    IntegersParsingError.MultipleOutstandingNumbers -> context.getString(R.string.not_single_outstanding)
                     else -> throw IllegalStateException()
                 }
             }

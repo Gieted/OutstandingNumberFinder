@@ -42,7 +42,7 @@ class ParseIntegersInputTest {
     fun `should fail when there is more than one outstanding number`() {
         val result = parseIntegersInput("1, 2, 3, 4")
         assertFalse(result.isValid)
-        assertEquals(IntegersParsingError.NotSingleOutstanding, result.error)
+        assertEquals(IntegersParsingError.MultipleOutstandingNumbers, result.error)
         assertNull(result.integers)
     }
 
