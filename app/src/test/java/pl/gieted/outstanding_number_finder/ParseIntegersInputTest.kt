@@ -47,6 +47,14 @@ class ParseIntegersInputTest {
     }
 
     @Test
+    fun `should fail when there there isn't any outstanding number`() {
+        val result = parseIntegersInput("1, 1, 1, 1")
+        assertFalse(result.isValid)
+        assertEquals(IntegersParsingError.NoOutstandingNumber, result.error)
+        assertNull(result.integers)
+    }
+
+    @Test
     fun `should correctly parse when input is valid`() {
         val result1 = parseIntegersInput("1, -2, 3")
         assertTrue(result1.isValid)

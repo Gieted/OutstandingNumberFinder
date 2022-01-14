@@ -1,7 +1,7 @@
 package pl.gieted.outstanding_number_finder
 
 enum class IntegersParsingError {
-    IncorrectFormat, LessThan3Numbers, InputBlank, MultipleOutstandingNumbers
+    IncorrectFormat, LessThan3Numbers, InputBlank, MultipleOutstandingNumbers, NoOutstandingNumber
 }
 
 data class IntegersParsingResult(
@@ -31,6 +31,10 @@ fun parseIntegersInput(input: String): IntegersParsingResult {
 
     val evenIntegersCount = integers.count { it.isEven() }
     val oddIntegersCount = integers.size - evenIntegersCount
+
+    if (evenIntegersCount == 0 || oddIntegersCount == 0) {
+        return IntegersParsingResult(error = IntegersParsingError.NoOutstandingNumber)
+    }
 
     if (evenIntegersCount > 1 && oddIntegersCount > 1) {
         return IntegersParsingResult(error = IntegersParsingError.MultipleOutstandingNumbers)
